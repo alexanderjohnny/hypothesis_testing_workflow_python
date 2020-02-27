@@ -8,15 +8,6 @@
 - Instructor: James Irving
 
 
-## Instructions:
-
-- Open and read the project assignment and guidelines in `MOD_PROJECT_README.ipynb`
-- Review the hypothesis testing workflow found in this repo's `README.md` and at the bottom of the `MOD_PROJECT_README.ipynb`
-- 3 functions from study group/learn.co lessons have been provided inside `functions.py`
-    - `Cohen_d`, `find_outliers_IQR`,`find_outliers_Z`
-
-
-
 <img src="https://raw.githubusercontent.com/jirvingphd/dsc-mod-3-project-online-ds-ft-100719/master/Northwind_ERD_updated.png">
 
 # PROJECT
@@ -30,46 +21,46 @@ import pandas as pd
 
 ```
 
-    fsds_1007219  v0.7.6 loaded.  Read the docs: https://fsds.readthedocs.io/en/latest/ 
+    fsds_1007219  v0.7.8 loaded.  Read the docs: https://fsds.readthedocs.io/en/latest/ 
 
 
 
 <style  type="text/css" >
-</style><table id="T_6b98701c_55d3_11ea_9116_0026bb4edb26" ><caption>Loaded Packages and Handles</caption><thead>    <tr>        <th class="col_heading level0 col0" >Handle</th>        <th class="col_heading level0 col1" >Package</th>        <th class="col_heading level0 col2" >Description</th>    </tr></thead><tbody>
+</style><table id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26" ><caption>Loaded Packages and Handles</caption><thead>    <tr>        <th class="col_heading level0 col0" >Handle</th>        <th class="col_heading level0 col1" >Package</th>        <th class="col_heading level0 col2" >Description</th>    </tr></thead><tbody>
                 <tr>
-                                <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row0_col0" class="data row0 col0" >dp</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row0_col1" class="data row0 col1" >IPython.display</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row0_col2" class="data row0 col2" >Display modules with helpful display and clearing commands.</td>
+                                <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row0_col0" class="data row0 col0" >dp</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row0_col1" class="data row0 col1" >IPython.display</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row0_col2" class="data row0 col2" >Display modules with helpful display and clearing commands.</td>
             </tr>
             <tr>
-                                <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row1_col0" class="data row1 col0" >fs</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row1_col1" class="data row1 col1" >fsds_100719</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row1_col2" class="data row1 col2" >Custom data science bootcamp student package</td>
+                                <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row1_col0" class="data row1 col0" >fs</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row1_col1" class="data row1 col1" >fsds_100719</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row1_col2" class="data row1 col2" >Custom data science bootcamp student package</td>
             </tr>
             <tr>
-                                <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row2_col0" class="data row2 col0" >mpl</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row2_col1" class="data row2 col1" >matplotlib</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row2_col2" class="data row2 col2" >Matplotlib's base OOP module with formatting artists</td>
+                                <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row2_col0" class="data row2 col0" >mpl</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row2_col1" class="data row2 col1" >matplotlib</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row2_col2" class="data row2 col2" >Matplotlib's base OOP module with formatting artists</td>
             </tr>
             <tr>
-                                <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row3_col0" class="data row3 col0" >plt</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row3_col1" class="data row3 col1" >matplotlib.pyplot</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row3_col2" class="data row3 col2" >Matplotlib's matlab-like plotting module</td>
+                                <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row3_col0" class="data row3 col0" >plt</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row3_col1" class="data row3 col1" >matplotlib.pyplot</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row3_col2" class="data row3 col2" >Matplotlib's matlab-like plotting module</td>
             </tr>
             <tr>
-                                <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row4_col0" class="data row4 col0" >np</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row4_col1" class="data row4 col1" >numpy</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row4_col2" class="data row4 col2" >scientific computing with Python</td>
+                                <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row4_col0" class="data row4 col0" >np</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row4_col1" class="data row4 col1" >numpy</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row4_col2" class="data row4 col2" >scientific computing with Python</td>
             </tr>
             <tr>
-                                <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row5_col0" class="data row5 col0" >pd</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row5_col1" class="data row5 col1" >pandas</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row5_col2" class="data row5 col2" >High performance data structures and tools</td>
+                                <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row5_col0" class="data row5 col0" >pd</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row5_col1" class="data row5 col1" >pandas</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row5_col2" class="data row5 col2" >High performance data structures and tools</td>
             </tr>
             <tr>
-                                <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row6_col0" class="data row6 col0" >sns</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row6_col1" class="data row6 col1" >seaborn</td>
-                        <td id="T_6b98701c_55d3_11ea_9116_0026bb4edb26row6_col2" class="data row6 col2" >High-level data visualization library based on matplotlib</td>
+                                <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row6_col0" class="data row6 col0" >sns</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row6_col1" class="data row6 col1" >seaborn</td>
+                        <td id="T_64a920f6_59ae_11ea_b3a1_0026bb4edb26row6_col2" class="data row6 col2" >High-level data visualization library based on matplotlib</td>
             </tr>
     </tbody></table>
 
@@ -672,12 +663,12 @@ sns.barplot(data=h1df, x='discounted',y='Quantity',ci=68,)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1a2595ee48>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a23bf0cf8>
 
 
 
 
-![png](output_22_1.png)
+![png](output_19_1.png)
 
 
 ### put data into dict
@@ -751,7 +742,7 @@ ax.set(title='Quantity for Full Price vs Discounted Products', ylabel='Density')
 
 
 
-![png](output_28_1.png)
+![png](output_25_1.png)
 
 
 
@@ -789,7 +780,7 @@ ax.set(title='Quantity for Full Price vs Discounted Products', ylabel='Density')
 
 
 
-![png](output_31_1.png)
+![png](output_28_1.png)
 
 
 ### 1. Test Assumption of Normality
@@ -1955,13 +1946,15 @@ sns.barplot(data=h1df,x='Discount',y='Quantity',ci=68)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1a25cf22e8>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a23f8ac50>
 
 
 
 
-![png](output_67_1.png)
+![png](output_64_1.png)
 
+
+So we see from the graph and corresponding tukey dataframe that 5%, 10%, 15%, 20% and 25% were all significant in effecting average quantity sold in an order. The best route would be to use 5% discounts to try and maintain sales amount while keeping profits up. 
 
 # Hypothesis 2
 
@@ -2398,12 +2391,12 @@ sns.barplot(data=h2df, x='discounted', y='Total Spent', ci=68 )
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1a25dafc88>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a240645c0>
 
 
 
 
-![png](output_80_1.png)
+![png](output_78_1.png)
 
 
 ### put data into dict
@@ -2476,7 +2469,7 @@ ax.set(title='Total Spent on Full Price vs Discounted Products', ylabel='Density
 
 
 
-![png](output_86_1.png)
+![png](output_84_1.png)
 
 
 
@@ -2514,7 +2507,7 @@ ax.set(title='Total Spent on Full Price vs Discounted Products', ylabel='Density
 
 
 
-![png](output_89_1.png)
+![png](output_87_1.png)
 
 
 ### 1. Test Assumption of Normality
@@ -3706,13 +3699,15 @@ sns.barplot(data=h2df,x='Discount',y='Total Spent',ci=68)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1a263555c0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a2455cf28>
 
 
 
 
-![png](output_122_1.png)
+![png](output_120_1.png)
 
+
+So we see from the graph and corresponding tukey dataframe that 5%, 15%, 20% and 25% were all significant in effecting average total spent in an order. The best route would be to use 5% discounts to try and maintain sales amount while keeping profits up. 
 
 # Hypothesis 3
 
@@ -4108,7 +4103,7 @@ ax.set_xticklabels(ax.get_xticklabels(), rotation=45, horizontalalignment='right
 
 
 
-![png](output_138_1.png)
+![png](output_137_1.png)
 
 
 ### put data into dict
@@ -4329,7 +4324,7 @@ ax.set(title='Total Spent by Region', ylabel='Density')
 
 
 
-![png](output_144_1.png)
+![png](output_143_1.png)
 
 
 Something is seriously skewing the sales data for these regions. Looks like Western Europe and South America. 
@@ -4844,7 +4839,106 @@ h3tukeyprepdf
 
 
 ```python
-h3tukey = pairwise_tukeyhsd(h3tukeyprepdf['data'],h3tukeyprepdf['group'])
+h3tukeyprepdf.rename(columns={'data': 'Total Spent', 'group': 'Region'}, inplace=True)
+
+```
+
+
+```python
+h3tukeyprepdf
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total Spent</th>
+      <th>Region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>168.00</td>
+      <td>Southern Europe</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>174.00</td>
+      <td>Southern Europe</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>234.00</td>
+      <td>Southern Europe</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>200.00</td>
+      <td>Southern Europe</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>153.60</td>
+      <td>Southern Europe</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>2092</td>
+      <td>180.00</td>
+      <td>Victoria</td>
+    </tr>
+    <tr>
+      <td>2103</td>
+      <td>52.35</td>
+      <td>Victoria</td>
+    </tr>
+    <tr>
+      <td>2113</td>
+      <td>523.50</td>
+      <td>Victoria</td>
+    </tr>
+    <tr>
+      <td>2123</td>
+      <td>244.30</td>
+      <td>Victoria</td>
+    </tr>
+    <tr>
+      <td>2140</td>
+      <td>34.90</td>
+      <td>Victoria</td>
+    </tr>
+  </tbody>
+</table>
+<p>2106 rows × 2 columns</p>
+</div>
+
+
+
+
+```python
+h3tukey = pairwise_tukeyhsd(h3tukeyprepdf['Total Spent'],h3tukeyprepdf['Region'])
 h3tukey.summary()
 ```
 
@@ -5882,69 +5976,7 @@ h3tukeydf.loc[h3tukeydf['reject']==True]
 
 
 ```python
-h3tukeyprepdf.head()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>data</th>
-      <th>group</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>168.0</td>
-      <td>Southern Europe</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>174.0</td>
-      <td>Southern Europe</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>234.0</td>
-      <td>Southern Europe</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>200.0</td>
-      <td>Southern Europe</td>
-    </tr>
-    <tr>
-      <td>31</td>
-      <td>153.6</td>
-      <td>Southern Europe</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-ax = sns.barplot(data=h3tukeyprepdf,x='group',y='data',ci=68)
+ax = sns.barplot(data=h3tukeyprepdf,x='Region',y='Total Spent',ci=68)
 ax.set_xticklabels(ax.get_xticklabels(), rotation=45, horizontalalignment='right')
 
 
@@ -5970,6 +6002,380 @@ ax.set_xticklabels(ax.get_xticklabels(), rotation=45, horizontalalignment='right
 
 ![png](output_174_1.png)
 
+
+
+```python
+h3tukeydf.loc[h3tukeydf['reject']==False]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group1</th>
+      <th>group2</th>
+      <th>meandiff</th>
+      <th>p-adj</th>
+      <th>lower</th>
+      <th>upper</th>
+      <th>reject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>British Isles</td>
+      <td>Eastern Asia</td>
+      <td>14.6550</td>
+      <td>0.9000</td>
+      <td>-207.9509</td>
+      <td>237.2609</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>British Isles</td>
+      <td>North America</td>
+      <td>128.9323</td>
+      <td>0.2793</td>
+      <td>-34.3181</td>
+      <td>292.1827</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>British Isles</td>
+      <td>Northern Europe</td>
+      <td>-20.4693</td>
+      <td>0.9000</td>
+      <td>-226.1777</td>
+      <td>185.2391</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>British Isles</td>
+      <td>Scandinavia</td>
+      <td>81.4215</td>
+      <td>0.9000</td>
+      <td>-116.4391</td>
+      <td>279.2820</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>British Isles</td>
+      <td>South America</td>
+      <td>-257.8523</td>
+      <td>0.1968</td>
+      <td>-564.7067</td>
+      <td>49.0021</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>British Isles</td>
+      <td>South-East Asia</td>
+      <td>182.6815</td>
+      <td>0.4172</td>
+      <td>-69.9824</td>
+      <td>435.3454</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>British Isles</td>
+      <td>Southern Europe</td>
+      <td>179.2675</td>
+      <td>0.0680</td>
+      <td>-5.8670</td>
+      <td>364.4020</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Eastern Asia</td>
+      <td>NSW</td>
+      <td>265.4689</td>
+      <td>0.0530</td>
+      <td>-1.5830</td>
+      <td>532.5207</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Eastern Asia</td>
+      <td>North America</td>
+      <td>114.2773</td>
+      <td>0.7463</td>
+      <td>-89.1503</td>
+      <td>317.7049</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Eastern Asia</td>
+      <td>Northern Europe</td>
+      <td>-35.1243</td>
+      <td>0.9000</td>
+      <td>-273.9716</td>
+      <td>203.7230</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Eastern Asia</td>
+      <td>Scandinavia</td>
+      <td>66.7665</td>
+      <td>0.9000</td>
+      <td>-165.3561</td>
+      <td>298.8891</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Eastern Asia</td>
+      <td>South America</td>
+      <td>-272.5073</td>
+      <td>0.2187</td>
+      <td>-602.4947</td>
+      <td>57.4802</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Eastern Asia</td>
+      <td>South-East Asia</td>
+      <td>168.0265</td>
+      <td>0.6709</td>
+      <td>-112.2789</td>
+      <td>448.3319</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Eastern Asia</td>
+      <td>Southern Europe</td>
+      <td>164.6125</td>
+      <td>0.3714</td>
+      <td>-56.7624</td>
+      <td>385.9874</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>NSW</td>
+      <td>North America</td>
+      <td>-151.1916</td>
+      <td>0.4953</td>
+      <td>-371.2234</td>
+      <td>68.8403</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>NSW</td>
+      <td>Scandinavia</td>
+      <td>-198.7023</td>
+      <td>0.2522</td>
+      <td>-445.5061</td>
+      <td>48.1014</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>NSW</td>
+      <td>South-East Asia</td>
+      <td>-97.4424</td>
+      <td>0.9000</td>
+      <td>-390.0212</td>
+      <td>195.1364</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>NSW</td>
+      <td>Southern Europe</td>
+      <td>-100.8564</td>
+      <td>0.9000</td>
+      <td>-337.5800</td>
+      <td>135.8673</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>NSW</td>
+      <td>Victoria</td>
+      <td>26.8376</td>
+      <td>0.9000</td>
+      <td>-223.8139</td>
+      <td>277.4891</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>North America</td>
+      <td>Northern Europe</td>
+      <td>-149.4016</td>
+      <td>0.2464</td>
+      <td>-334.1862</td>
+      <td>35.3830</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>North America</td>
+      <td>Scandinavia</td>
+      <td>-47.5108</td>
+      <td>0.9000</td>
+      <td>-223.5170</td>
+      <td>128.4955</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>North America</td>
+      <td>South-East Asia</td>
+      <td>53.7492</td>
+      <td>0.9000</td>
+      <td>-182.1924</td>
+      <td>289.6908</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>North America</td>
+      <td>Southern Europe</td>
+      <td>50.3352</td>
+      <td>0.9000</td>
+      <td>-111.2327</td>
+      <td>211.9031</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>North America</td>
+      <td>Victoria</td>
+      <td>178.0292</td>
+      <td>0.0599</td>
+      <td>-3.3330</td>
+      <td>359.3914</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Northern Europe</td>
+      <td>Scandinavia</td>
+      <td>101.8908</td>
+      <td>0.9000</td>
+      <td>-114.0801</td>
+      <td>317.8618</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>Northern Europe</td>
+      <td>South America</td>
+      <td>-237.3830</td>
+      <td>0.3693</td>
+      <td>-556.2157</td>
+      <td>81.4497</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>Northern Europe</td>
+      <td>South-East Asia</td>
+      <td>203.1508</td>
+      <td>0.3349</td>
+      <td>-63.9329</td>
+      <td>470.2345</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>Northern Europe</td>
+      <td>Southern Europe</td>
+      <td>199.7368</td>
+      <td>0.0624</td>
+      <td>-4.6389</td>
+      <td>404.1125</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>Scandinavia</td>
+      <td>South-East Asia</td>
+      <td>101.2600</td>
+      <td>0.9000</td>
+      <td>-159.8273</td>
+      <td>362.3472</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>Scandinavia</td>
+      <td>Southern Europe</td>
+      <td>97.8460</td>
+      <td>0.8739</td>
+      <td>-98.6286</td>
+      <td>294.3206</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>South-East Asia</td>
+      <td>Southern Europe</td>
+      <td>-3.4140</td>
+      <td>0.9000</td>
+      <td>-254.9941</td>
+      <td>248.1660</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>South-East Asia</td>
+      <td>Victoria</td>
+      <td>124.2800</td>
+      <td>0.9000</td>
+      <td>-140.4474</td>
+      <td>389.0074</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>Southern Europe</td>
+      <td>Victoria</td>
+      <td>127.6940</td>
+      <td>0.6010</td>
+      <td>-73.5927</td>
+      <td>328.9807</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+So we see from the graph and corresponding tukey dataframe that Western Europe, Victoria and New South Wales were among the most significant as a group as far as higher average total spent per sale goes. South America would be significant in lowest average total spent per sale. Looking specifically at our region, North America, it holds significance over South America on higher average total spent, but seems to be similar to other regions except those stated previously in first grouping. This could tell us that W. Europe, Victoria, and NSW all sell products that are more expensive, but as far as performance goes, it would be helpful to also look at quantity sold and compare the two side by side for future work.
 
 ### Calculate effect size (e.g. Cohen's  𝑑 )
 
@@ -6441,7 +6847,7 @@ ax.set_xticklabels(ax.get_xticklabels(), rotation=45, horizontalalignment='right
 
 
 
-![png](output_194_1.png)
+![png](output_196_1.png)
 
 
 ### put data into dict
@@ -6590,7 +6996,7 @@ ax.set(title='Total Spent from Sale by Employee', ylabel='Density')
 
 
 
-![png](output_200_1.png)
+![png](output_202_1.png)
 
 
 Looks like there are some outliers.  
@@ -6750,9 +7156,24 @@ print(f"Kruskal-Wallis p-value={round(h4p,4)}")
     Kruskal-Wallis p-value=0.2356
 
 
-Kruskal-Wallis p val shows that the null hypothesis should NOT be rejected and employee does have significant effect on average total spent per order. 
+Kruskal-Wallis p val shows that the null hypothesis should NOT be rejected and employee does NOT have significant effect on average total spent per order. 
+
+It seems that all employees are about even in significance on average total spent per sale so we assume they don't have an effect on total spent. So this could tell us that our employees have similar performance in sales from their training. Something to look at in the future would be comparing which employee is based in which region, because we know from above hypothesis number 3 that different regions have vast differences in prices for products sold. This could also help give us a good idea of how well the employees perform, in addition to looking at average quantity per order. 
 
 ### Could calc effect size to then calc power to see if there's a possibility of type 2 errors.
+
+
+```python
+
+```
+
+# Summary
+
+If offering a discount for customers, a 5% discount would be best inorder to keep sales profits up, while maintaining the number of sales coming in. 
+
+Our top regions as far as average total spent by a customer per order were Western Europe, Victoria and New South Wales, and least average total spent was South America but further investigation into product pricing and quantity could help give that assumption some more insight. 
+
+Employee performance across the entire company based on average total spent by a customer per order was fairly even and didn't show any significant effect. We know that the product pricing varies greatly based on region so further investigation with taking that into account along with average quantity sold per order could help give us better insight about employee performance. 
 
 
 ```python
